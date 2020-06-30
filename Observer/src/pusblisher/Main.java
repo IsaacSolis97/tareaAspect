@@ -1,10 +1,12 @@
 package pusblisher;
 
+import editor.Autenticator;
 import editor.Editor;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import listeners.ButtonBlueListener;
@@ -19,11 +21,17 @@ public class Main extends Application {
 		Stage stage = new Stage();
 		VBox root = new VBox();
 		//Creo los botones
+		TextField user=new TextField("Usuario");
+		TextField pass=new TextField("Contraseña");
+		Button Premium = new Button("Premium");
 		Button Bluebt = new Button("Blue");
 		Button Redbt = new Button("Red");
 		Button Greenbt = new Button("Green");
 		//Creo el editor y suscribo los botones a un cada evento
 		Editor editor = new Editor();
+		//crear el autenticador y llamar a su metodo inicializador
+		Autenticator aut=new Autenticator();
+		aut.Initializer(user.getText(), pass.getText());
 		
         editor.events.subscribe("clickOnBlue", new ButtonBlueListener(/*Bluebt,root*/));
         editor.events.subscribe("clickOnRed", new ButtonRedListener(/*Redbt,root*/));
@@ -38,7 +46,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
 		
-		root.getChildren().addAll(Bluebt,Redbt,Greenbt);
+		root.getChildren().addAll(user,pass,Premium,Bluebt,Redbt,Greenbt);
 		root.setAlignment(Pos.CENTER);
 		Scene scene = new Scene(root, 400,400);
 		stage.setScene(scene);
