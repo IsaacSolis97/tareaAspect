@@ -18,9 +18,9 @@ public class Autenticator {
 	}
 	
 	public boolean Initializer(String userTF,String passTF) {
-		if(userTF=="pepe" && passTF=="123") {
+		if(userTF==users[0] && passTF==pass[0]) {
 			return true;
-		}else if(userTF=="maria" && passTF=="321") {
+		}else if(userTF==users[1] && passTF==pass[1]) {
 			return true;
 		}else {
 			return false;

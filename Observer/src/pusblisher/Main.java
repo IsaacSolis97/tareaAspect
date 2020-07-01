@@ -23,7 +23,8 @@ public class Main extends Application {
 		//Creo los botones
 		TextField user=new TextField("Usuario");
 		TextField pass=new TextField("Contraseña");
-		Button Premium = new Button("Premium");
+		//BOTON INICIO SESION
+		Button iniciarSesion = new Button("Iniciar Sesion");
 		Button Bluebt = new Button("Blue");
 		Button Redbt = new Button("Red");
 		Button Greenbt = new Button("Green");
@@ -45,8 +46,9 @@ public class Main extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
-		
-		root.getChildren().addAll(user,pass,Premium,Bluebt,Redbt,Greenbt);
+
+        
+		root.getChildren().addAll(user,pass,iniciarSesion,Bluebt,Redbt,Greenbt);
 		root.setAlignment(Pos.CENTER);
 		Scene scene = new Scene(root, 400,400);
 		stage.setScene(scene);

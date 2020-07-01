@@ -12,6 +12,11 @@ public class Editor {
         this.events = new EventManager("clickOnBlue", "clickOnGreen","clickOnRed");
     }
 
+    public void iniciarSesion(Button iniciarSesion, Pane root) {
+        
+        events.notify("inciarSesion", iniciarSesion,root);
+    }
+    
     public void cambiarColorRojo(Button color, Pane root) {
         
         events.notify("clickOnRed", color,root);
@@ -21,6 +26,7 @@ public class Editor {
         
         events.notify("clickOnBlue", color,root);
     }
+    
     public void cambiarColorVerde(Button color, Pane root) {
         
         events.notify("clickOnGreen", color,root);
